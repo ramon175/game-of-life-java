@@ -60,9 +60,11 @@ public class GameOfLife {
             for(int j = -1; j<= 1; j++){
                 if(i == 0 && j == 0) continue;
 
+                // calculate the delta from current line (get previous line position)
                 int dx = x + i;
+                // calculate the delta from current column (get previous column position)
                 int dy = y + j;
-
+                //verify if delta positions are bigger than 0 (avoid edges) and if cell is alive
                 if(dx >= 0 && dx < SIZE && dy >= 0 && dy < SIZE && board[dx][dy]){
                     count++;
                 }
